@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Laporan Penjualan Ayam Geprek</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Laporan Penjualan Ayam Geprek</h1>
+
+			<div class="cab-select">
+				<label for="select-cabang"><strong>Pilih Cabang:</strong></label>
+				<select id="select-cabang">
+					<option disabled selected>-- Pilih Cabang --</option>
+					<option value="Cabang A">Cabang A</option>
+					<option value="Cabang B">Cabang B</option>
+					<option value="Cabang C">Cabang C</option>
+					<option value="Tambah">+ Tambah Cabang Baru</option>
+				</select>
+				<input
+					type="text"
+					id="input-cabang-baru"
+					placeholder="Nama Cabang Baru"
+					style="display: none"
+				/>
+				<button
+					id="export-excel-btn"
+					style="
+						margin: 10px 0;
+						padding: 10px;
+						background-color: #3498db;
+						color: white;
+						border: none;
+						border-radius: 6px;
+						cursor: pointer;
+					"
+				>
+					Export ke Excel
+				</button>
+				<button id="tambah-cabang-btn" style="display: none">
+					Tambah Cabang
+				</button>
+			</div>
+
+			<form id="form-laporan" style="display: none">
+				<input type="date" id="tanggal" required />
+				<input type="number" id="stock" placeholder="Stock" required />
+				<input type="number" id="sold" placeholder="Terjual" required />
+				<input type="number" id="reject" placeholder="Reject" required />
+				<input
+					type="number"
+					id="karyawan"
+					placeholder="Makan Karyawan"
+					required
+				/>
+				<input type="number" id="bonus" placeholder="Bonus" required />
+				<input type="number" id="total" placeholder="Total (Rp)" required />
+				<button type="submit">Tambah Laporan</button>
+			</form>
+
+			<div id="label-cabang-terpilih" style="margin: 10px 0"></div>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Tanggal</th>
+						<th>Stock</th>
+						<th>Sold</th>
+						<th>Reject</th>
+						<th>Makan Karyawan</th>
+						<th>Bonus</th>
+						<th>Sisa</th>
+						<th>Total (Rp)</th>
+					</tr>
+				</thead>
+				<tbody id="tabel-laporan">
+					<!-- Laporan akan ditampilkan di sini -->
+				</tbody>
+			</table>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
