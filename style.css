@@ -134,3 +134,20 @@ table tbody tr:nth-child(even) {
 		align-items: flex-start;
 	}
 }
+/* Scrollable table for mobile */
+@media (max-width: 768px) {
+	table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	table thead,
+	table tbody,
+	table th,
+	table td,
+	table tr {
+		display: table;
+		width: 100%;
+	}
+}
