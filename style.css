@@ -133,6 +133,22 @@ table tbody tr:nth-child(even) {
 		flex-direction: column;
 		align-items: flex-start;
 	}
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		margin-bottom: 20px;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.form-group label {
+		margin-bottom: 5px;
+		font-weight: 500;
+	}
 }
 /* Scrollable table for mobile */
 @media (max-width: 768px) {
